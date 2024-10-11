@@ -4,6 +4,14 @@
              x:Class="Maui_NavigationDemo.MVVM.Pages.StartPage"
              Title="StartPage">
 
+    <NavigationPage.TitleView>
+        <Frame Margin="10"
+               Padding="0"
+               CornerRadius="0">
+            <SearchBar Placeholder="Search Places" />
+        </Frame>
+              
+    </NavigationPage.TitleView>
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="Center">
         <Entry Text="{Binding Name}" />
