@@ -1,3 +1,4 @@
+using Maui_NavigationDemo.MVVM.ViewModels;
 using Maui_NavigationDemo.Utilities;
 
 namespace Maui_NavigationDemo.MVVM.Pages;
@@ -7,6 +8,7 @@ public partial class StartPage : ContentPage
 	public StartPage()
 	{
 		InitializeComponent();
+        BindingContext = new StartPageViewModel ();
 	}
     protected override void OnAppearing()
     {
@@ -16,7 +18,14 @@ public partial class StartPage : ContentPage
 
     private void Button_Clicked(object sender, EventArgs e)
     {
-		Navigation.PushAsync(new Page2(txtName.Text));
+        var currentViewModel = ((StartPageViewModel)BindingContext).Name;
+		Navigation.PushAsync(new Page2
+        {
+            BindingContext = new Page2ViewModel
+            {
+                Name = currentViewModel
+            }
+        });
         //NavUtilities.DeletePage(Navigation, "StartPage");
     }
 }
