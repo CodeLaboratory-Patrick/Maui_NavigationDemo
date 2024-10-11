@@ -15,6 +15,10 @@ public partial class CoolPage : ContentPage
         NavUtilities.Examine(Navigation);
     }
 
+    protected override bool OnBackButtonPressed()
+    {
+        return true;
+    }
     private void Button_Clicked(object sender, EventArgs e)
     {
         Navigation.PopModalAsync();
