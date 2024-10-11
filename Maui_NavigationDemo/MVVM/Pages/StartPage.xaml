@@ -6,6 +6,7 @@
 
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="Center">
+        <Entry x:Name="txtName" Placeholder="Name" />
         <Button Text="Go to Page 2"
                 Clicked="Button_Clicked"/>
     </StackLayout>

@@ -16,7 +16,7 @@ public partial class StartPage : ContentPage
 
     private void Button_Clicked(object sender, EventArgs e)
     {
-		Navigation.PushModalAsync(new CoolPage());
+		Navigation.PushAsync(new Page2(txtName.Text));
         //NavUtilities.DeletePage(Navigation, "StartPage");
     }
 }
